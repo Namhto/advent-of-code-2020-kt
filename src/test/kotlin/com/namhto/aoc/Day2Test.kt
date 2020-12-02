@@ -22,6 +22,6 @@ internal class Day2Test {
             "2-9 c: ccccccccc"
         )
         val result = getResult(lines)
-        assertThat(result).isEqualTo(2)
+        assertThat(result).isEqualTo(1)
     }
 }
