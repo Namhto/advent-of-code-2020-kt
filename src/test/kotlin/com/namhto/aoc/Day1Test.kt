@@ -9,7 +9,7 @@ internal class Day1Test {
 
     @Test
     fun getResult() {
-        val numbers = Files.readAllLines(Path.of(this.javaClass.classLoader.getResource("input.txt")!!.toURI()))
+        val numbers = Files.readAllLines(Path.of(this.javaClass.classLoader.getResource("input_day1.txt")!!.toURI()))
             .mapNotNull { it.toInt() }
             .toIntArray()
         val result = getResult(numbers)
