@@ -10,7 +10,7 @@ internal class Day2Test {
     @Test
     fun getResult() {
         val lines = Files.readAllLines(Path.of(this.javaClass.classLoader.getResource("input_day2.txt")!!.toURI()))
-        val result = getResult(lines)
+        val result = getResultDay2(lines)
         println(result)
     }
 
@@ -21,7 +21,7 @@ internal class Day2Test {
             "1-3 b: cdefg",
             "2-9 c: ccccccccc"
         )
-        val result = getResult(lines)
+        val result = getResultDay2(lines)
         assertThat(result).isEqualTo(1)
     }
 }

@@ -1,6 +1,6 @@
 package com.namhto.aoc
 
-fun getResult(lines: List<String>): Int {
+fun getResultDay2(lines: List<String>): Int {
     return lines.map { Regex("(\\d+)-(\\d+)\\s([a-z]):\\s([a-z]+)").find(it)!!.destructured }
         .filter {
             val first = it.component1().toInt() - 1
