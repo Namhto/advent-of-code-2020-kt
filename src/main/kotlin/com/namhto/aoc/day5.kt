@@ -1,7 +1,9 @@
 package com.namhto.aoc
 
 fun getResultDay5(lines: List<String>): Int {
-    return lines.map { it.getSeatId() }.maxOrNull() ?: 0
+    val allIds = (0 * 8 + 0)..(127 * 8 + 7)
+    val seatIds = lines.map { it.getSeatId() }
+    return allIds.minus(seatIds).find { seatIds.contains(it - 1) && seatIds.contains(it + 1) } ?: 0
 }
 
 private fun String.getSeatId(): Int {
