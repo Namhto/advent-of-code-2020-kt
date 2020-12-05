@@ -40,5 +40,5 @@ private val fields: Map<String, (v: String) -> Boolean> = mapOf(
     },
     "hcl" to { Regex("#[0-9a-f]{6}").matches(it) },
     "ecl" to { listOf("amb", "blu", "brn", "gry", "grn", "hzl", "oth").any { item -> item == it } },
-    "pid" to { Regex("[0-9]{9}").matches(it) },
+    "pid" to { Regex("^[0-9]{9}$").matches(it) },
 )
