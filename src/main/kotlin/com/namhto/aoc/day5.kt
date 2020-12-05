@@ -12,7 +12,7 @@ private fun String.getSeatId(): Int {
             else -> r
         }
     }.first
-    val column = substring(7..8).fold(0..7) { r, c ->
+    val column = substring(7..9).fold(0..7) { r, c ->
         when (c) {
             'L' -> r.first..r.elementAt(r.count() / 2 - 1)
             'R' -> r.elementAt(r.count() / 2)..r.last
