@@ -34,6 +34,6 @@ internal class Day6Test {
             "b"
         )
         val result = getResultDay6(lines)
-        assertThat(result).isEqualTo(11)
+        assertThat(result).isEqualTo(6)
     }
 }
