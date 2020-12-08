@@ -8,14 +8,14 @@ import java.nio.file.Path
 internal class Day8Test {
 
     @Test
-    fun getResult() {
+    fun getResultOfFixedProgram() {
         val lines = Files.readAllLines(Path.of(this.javaClass.classLoader.getResource("input_day8.txt")!!.toURI()))
-        val result = getResultDay8(lines)
+        val result = getResultOfFixedProgram(lines)
         println(result)
     }
 
     @Test
-    fun getResult_with_example() {
+    fun getResultOfFixedProgram_with_example() {
         val lines = listOf(
             "nop +0",
             "acc +1",
@@ -25,9 +25,9 @@ internal class Day8Test {
             "acc -99",
             "acc +1",
             "jmp -4",
-            "acc +5"
+            "acc +6"
         )
-        val result = getResultDay8(lines)
-        assertThat(result).isEqualTo(5)
+        val result = getResultOfFixedProgram(lines)
+        assertThat(result).isEqualTo(8)
     }
 }
