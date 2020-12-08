@@ -2,12 +2,17 @@ package com.namhto.aoc
 
 fun getResultDay7(lines: List<String>): Int {
     val rules = lines.map { it.toBagRule() }
-    return getMatchingRulesRecursively(rules, "shiny gold").size
+    return getNumberOfBagsRecursively(rules, "shiny gold")
 }
 
-private fun getMatchingRulesRecursively(rules: List<BagRule>, color: String): Set<String> {
-    val matchingColors = rules.filter { it.content.containsKey(color) }.map { it.color }
-    return matchingColors.fold(matchingColors.toSet()) { acc, c -> acc.plus(getMatchingRulesRecursively(rules, c)) }
+private fun getNumberOfBagsRecursively(rules: List<BagRule>, color: String): Int {
+    val matchingRule = rules.find { it.color == color }!!
+    return matchingRule.content.values.sum() + matchingRule.content.map { (color, count) ->
+        count * getNumberOfBagsRecursively(
+            rules,
+            color
+        )
+    }.sum()
 }
 
 private data class BagRule(val color: String, val content: Map<String, Int>)
